@@ -45,3 +45,12 @@ a{
 .theme-change:hover{
     cursor: pointer;
 }
+.myPhoto{
+    width: 25%;
+    border-radius: 50%;
+    display: flex;
+    margin: 0 auto;
+}
+.name{
+    text-align: center;
+}
