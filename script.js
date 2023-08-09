@@ -1,20 +1,23 @@
-var bgcolor = "";
-var color = "";
-var themeIcon = "";
+setTheme();
 function themeChange(){
-    if(bgcolor=="#EFEFEF"){
-        bgcolor = "#161616";
-        color = "#EFEFEF";
-        themeIcon = "&#9788;";
-        document.getElementById("theme-change").style.color = "#EFEFEF";
+    if(localStorage.getItem("theme") == "#161616"){
+        localStorage.setItem("theme", "#EFEFEF");
+        localStorage.setItem("color", "#161616");
+        localStorage.setItem("icon", "☾");
     }
     else{
-        bgcolor = "#EFEFEF";
-        color = "#161616";
-        themeIcon = "&#9790;";
-        document.getElementById("theme-change").style.color = "#161616"; 
+        localStorage.setItem("theme", "#161616");
+        localStorage.setItem("color", "#EFEFEF");
+        localStorage.setItem("icon", "&#9788;");
     }
-    document.body.style.backgroundColor = bgcolor;
-    document.body.style.color = color; 
-    document.getElementById("theme-change").innerHTML = themeIcon;
+    setTheme();
+}
+function setTheme(){
+    background = localStorage.getItem("theme");
+    color = localStorage.getItem("color");
+    icon = localStorage.getItem("icon");
+    document.body.style.backgroundColor = background;
+    document.body.style.color = color;
+    document.getElementById("theme-change").innerHTML = icon;
+    console.log(background, color, icon);
 }
